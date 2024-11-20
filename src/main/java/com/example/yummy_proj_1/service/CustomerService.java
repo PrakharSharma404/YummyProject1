@@ -23,7 +23,7 @@ public class CustomerService {
     private final EncryptionService encryptionService;
     private final JWTHelper jwtHelper;
 
-    public String createCustomer(CustomerRequest request) {
+    public String createCustomer(CustomerRequest.CreateRequest request) {
         Customer customer = mapper.toEntity(request);
         customer.setPassword(encryptionService.encryptPassword(customer.getPassword()));
         repo.save(customer);

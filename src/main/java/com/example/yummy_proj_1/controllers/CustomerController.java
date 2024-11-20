@@ -25,7 +25,7 @@ public class CustomerController {
         }
 
         @PostMapping("/register")
-        public ResponseEntity<String> createCustomer(@RequestBody @Valid CustomerRequest request) {
+        public ResponseEntity<String> createCustomer(@RequestBody @Valid CustomerRequest.CreateRequest request) {
             return ResponseEntity.ok(customerService.createCustomer(request));
         }
     }
